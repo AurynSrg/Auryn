@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Shopify Business Blueprint</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4cbf410f-c6da-4ab3-a5ca-a171a131291d" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/webb1.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/user-circle_pink.svg"/></div><h1 class="page-title">Shopify Business Blueprint</h1><p class="page-description"></p></header><div class="page-body"><p id="8c46b105-183b-4d7b-8fba-1afd6a34701e" class=""><mark class="highlight-blue">A guide for aspiring entrepreneurs</mark></p><div id="3de067b1-33f6-46ef-819e-34b4cfc1e18c" class="column-list"><div id="1ebab774-e4b3-46a0-9949-ee728723d847" style="width:25.925925925925924%" class="column"><p id="414d07c5-7278-4c96-9b11-b5f9346ad000" class="">
+</p><figure id="4531bf09-47e0-4b72-b17c-bfaa018ff668" class="image"><a href="Shopify%20Business%20Blueprint%204cbf410fc6da4ab3a5caa171a131291d/Cuplikan_layar_2024-05-16_113252.png"><img style="width:940px" src="Shopify%20Business%20Blueprint%204cbf410fc6da4ab3a5caa171a131291d/Cuplikan_layar_2024-05-16_113252.png"/></a></figure><p id="a463b6f8-2df3-490b-a642-5d9cb915bc79" class="">
+</p><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1e2655f6-046e-4251-aaf9-e6b434de1c47"><div style="font-size:1.5em"><img class="icon" src="Shopify%20Business%20Blueprint%204cbf410fc6da4ab3a5caa171a131291d/Shopify_BBNotionTemplate_Icon_Shopify.png"/></div><div style="width:100%"><strong>Get started building your business with Shopify – </strong><a href="https://www.shopify.com/?utm_source=notion&amp;utm_medium=referral&amp;utm_campaign=bb&amp;utm_content=bae-bb-notion-template">start your 14-day free Shopify trial today here.</a></div></figure><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="4292d8ac-de4d-4dde-abfc-bb1939f77e26"><div style="font-size:1.5em"><img class="icon" src="Shopify%20Business%20Blueprint%204cbf410fc6da4ab3a5caa171a131291d/notion-logo.png"/></div><div style="width:100%"><strong>Get started building your operating system with Notion –</strong> <a href="https://www.notion.so/pages/shopify-notion-startup-partnership">startups may qualify for $1000 in Notion credit</a></div></figure></div><div id="f577b6c8-9273-4ef5-b736-7bf43b9365ec" style="width:50%" class="column"><h1 id="a6454a1a-c965-4bb4-92fe-3074652c98ed" class="block-color-blue"><mark class="highlight-blue"><strong>Welcome to the Business Blueprint </strong></mark><mark class="highlight-blue">🎉</mark></h1><p id="088f4751-3755-46c6-811e-4ecfac345718" class=""><mark class="highlight-blue"><strong>If you’re reading this, congrats. You’ve already taken the first step towards writing your entrepreneurship story. Whether you’ve been working on a business idea for a while or are just starting out, only you can determine where your story will go next. Wherever that may be, we’re excited to support you.</strong></mark></p><p id="fe65a56a-f8f1-4c8a-aa20-5203faa5f37e" class="block-color-blue">Entrepreneurship is a thrilling journey, full of many highs and learnings. We know there’s no perfect manual for starting a business, and translating your ideas into action can often be the most challenging part. That’s where the Shopify Business Blueprint comes in!</p><p id="9462bdc2-539e-4ad3-90a2-4f0f96493212" class="block-color-blue">This Blueprint is designed to give you the tools, skills, and knowledge to start your own business. It’s filled with insights and exercises tailored to help early-stage entrepreneurs go from ideation to execution, and beyond.</p><p id="15803615-f13d-46ae-a66e-68666904baa2" class="block-color-blue">You’ll find most sections take less than an hour to complete but feel free to take your time. Just like your business, it’s not meant to be built in a day! Work at your own pace and make sure to celebrate your milestones along the way (there will be many!).</p><p id="460bdb6b-a984-4a80-b4e4-4cff5faec292" class="block-color-blue">Entrepreneurship is a rewarding journey where you’ll have the opportunity to create something that’s truly yours. Pursuing your passions and building a business you love will be one of the most fulfilling chapters of your life.</p><p id="73a1b589-62ce-4b77-98df-642e67ea2fc0" class="block-color-blue">We’re excited to help you write it.<br/>Cheers to the next chapter; we can’t wait to see what you build.<br/></p><p id="2ea6430e-6bc8-4bae-a1f5-9138b671ee40" class="">
+</p><p id="47391260-d071-45bf-8301-8da785f1cdc3" class="block-color-blue"><strong>Harley Finkelstein, President, Shopify</strong></p></div><div id="1ed47da0-7c5a-4199-a3b0-073c12346a52" style="width:24.07407407407409%" class="column"><h1 id="0627ecf0-bf38-49c4-9d3a-9a5060a553cf" class="">Get Started 👇 </h1><figure id="c679a4d3-f490-4592-9558-c7e59b1ef40d" class="link-to-page"><a href="https://www.notion.so/1-Planning-c679a4d3f49045929558c7e59b1ef40d?pvs=21"><span class="icon">✏️</span>1: Planning</a></figure><figure id="76a4a663-3eec-454f-96b8-7599071dc3ac" class="link-to-page"><a href="https://www.notion.so/2-Framing-76a4a6633eec454f96b87599071dc3ac?pvs=21"><span class="icon">🪜</span>2: Framing</a></figure><figure id="767fc94a-4513-4b0b-8335-a45986dcf70a" class="link-to-page"><a href="https://www.notion.so/3-Building-767fc94a45134b0b8335a45986dcf70a?pvs=21"><span class="icon">🏗️</span>3: Building</a></figure><figure id="2ea21dd1-b2d7-4307-ae69-c0ad27c60fdb" class="link-to-page"><a href="https://www.notion.so/4-Growing-2ea21dd1b2d74307ae69c0ad27c60fdb?pvs=21"><span class="icon">🌳</span>4: Growing</a></figure><hr id="47f7925a-1a12-407b-81b3-dde7fe28ac6a"/><figure id="263e711c-f4ef-4036-a820-651e36877635" class="link-to-page"><a href="https://www.notion.so/About-Shopify-263e711cf4ef4036a820651e36877635?pvs=21"><img class="icon" src="Shopify%20Business%20Blueprint%204cbf410fc6da4ab3a5caa171a131291d/About%20Shopify%20263e711cf4ef4036a820651e36877635/Shopify_BBNotionTemplate_Icon_Shopify.png"/>About Shopify</a></figure></div></div><p id="3a8b2bfd-823e-4e61-b2c9-8dcc053ea55c" class="">
+</p><hr id="9a8d5967-64cd-4747-874b-15769690dab2"/><div id="8c4ad8ba-75f3-4fc4-a292-300ae01bf5f1" class="column-list"><div id="b45cbf26-b139-4055-a728-224bbf17dd68" style="width:68.75%" class="column"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="e6614391-32fd-4f59-968d-de6471d7dabf"><div style="font-size:1.5em"><img class="icon" src="https://i.stack.imgur.com/Vkq2a.png"/></div><div style="width:100%"> <h1 id="006040e2-8c08-43ec-a900-84b141d315d0" class=""><mark class="highlight-blue"><strong>Redefining “Entrepreneur’’</strong></mark></h1><p id="6e3e77e5-ad39-43c0-8677-d3b367250793" class="block-color-blue">Our understanding of the word “entrepreneur” is constantly changing. Over the last few generations, that term has evolved to no longer be limited to a particular group or circumstances. </p><p id="9e4bbcc3-bcc4-4c1a-b212-db427c7ea389" class="block-color-blue">Modern entrepreneurs are redefining the word to include anyone who is reaching for independence and working for themselves. The category has broadened to include all kinds of artists, innovators, and creators. Some entrepreneurs provide services or sell intangible assets. Others sell their handmade products, like candles or jewelry. Some curate products to sell in subscription boxes or retail stores. Others grow audiences online by making content and selling courses or merchandise. And still others dream up new categories we haven’t even heard of yet. </p><p id="c384e8f8-e832-45c3-83b5-d1a3808a4130" class="block-color-blue">The future of entrepreneurship contains more diverse voices, more varieties of businesses, and endless opportunities. While entrepreneurs may differ in their offerings, there are two things all of them have in common:</p><ol type="1" id="cb983f8d-08fc-49df-88b3-53acd57b6978" class="block-color-blue numbered-list" start="1"><li>Ambition</li></ol><ol type="1" id="a3d565ff-a329-4918-8052-de0a1c834ff2" class="block-color-blue numbered-list" start="2"><li>Momentum</li></ol><p id="33e64123-0ac3-40e6-a9ef-bef5b749af45" class=""><mark class="highlight-blue">We created The Business Blueprint to help you get started, to combine your ambition and momentum and transform them into a business of your own. The Blueprint is designed to give you a high-level overview of where and how to start a business. By the end of the Blueprint, you’ll have the tools and structure you need to continue pushing your business forward. </mark></p><p id="c5a2e8fb-8706-43d4-97b6-1084596fef42" class=""><mark class="highlight-blue">Next up: creating your business.</mark></p></div></figure><h3 id="123b0746-e151-4fc8-96ef-3bc7b02bbcc5" class=""><a href="https://www.notion.so/1-Planning-c679a4d3f49045929558c7e59b1ef40d?pvs=21"><mark class="highlight-blue">Let’s Get Started!</mark></a></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="e9a52af6-528b-4c39-88de-4d993b1a47a2"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><mark class="highlight-blue">First up is </mark><mark class="highlight-blue"><a href="https://www.notion.so/1-Planning-c679a4d3f49045929558c7e59b1ef40d?pvs=21"><span class="icon">✏️</span>1: Planning</a></mark><mark class="highlight-blue"> </mark></div></figure><p id="87b655fe-302d-4e50-a749-ad87bc51fe87" class="">
+</p></div><div id="78b644bd-5090-459a-a79c-a7569c97f977" style="width:31.25%" class="column"><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2eb7656c-ed61-4f24-871e-7ef330c3514c"><div style="font-size:1.5em"><span class="icon">🌐</span></div><div style="width:100%"><mark class="highlight-orange"><strong>Bonus Content: </strong></mark><mark class="highlight-orange">Read this story on the Shopify Blog about an up-and-coming founder getting their business started and redefining “entrepreneur.”<br/><br/></mark><p id="9488d01a-e3e9-48b6-abb9-a8326fbfaf1c" class="block-color-orange"><strong><a href="https://www.shopify.com/blog/empowering-phenomenal-women">Empowering Phenomenal Women Everywhere, One Shirt at a Time</a></strong><br/><br/></p><p id="339b8f7a-c452-47c9-a95b-2efa0606d904" class="">
+</p></div></figure></div></div><p id="8454b5c8-9a72-4f28-a9e1-2f9d5ae6a651" class="">
+</p><hr id="b29aa5ba-2f13-492c-9fc6-1e20c7a7e91d"/><div id="4c622d35-282d-4b7b-ac1c-6ddf1a664ec7" class="column-list"><div id="8dbaae32-587a-4bdb-8a3b-6527841ef62c" style="width:29.166666666666664%" class="column"><p id="a9223370-c835-4307-8380-450e3aeaff5d" class="">
+</p></div><div id="cb049ac2-a9e2-4250-b76c-42831df9377b" style="width:41.666666666666664%" class="column"><h1 id="abb58f87-6b56-48a6-9e6f-72f686ab6e7a" class="">Start your business journey with Shopify</h1><p id="91c9e760-0605-483c-ba12-b8fa98b4498b" class="">Try Shopify for free, and explore all the tools and services you need to start, run, and grow your business.</p><h3 id="6cd7cc94-e8a8-4d4c-b5c2-95cda3fb14e3" class=""><a href="https://www.shopify.com/?utm_source=notion&amp;utm_medium=referral&amp;utm_campaign=bb&amp;utm_content=bae-bb-notion-template">Start 14-Day Free Trial</a></h3><p id="d50b1a0e-1d4d-4f92-9aa1-32916836d9f7" class="">
+</p><p id="564f0757-ba52-44a4-9e72-728bcbceb381" class="">Get started building your operating system with Notion - <a href="https://www.notion.so/pages/shopify-notion-startup-partnership">startups may qualify for $1000 in Notion credit</a></p></div><div id="460b3169-d727-4f80-93d9-04f3c8639f61" style="width:29.166666666666686%" class="column"><p id="9e934b68-34c0-4173-85ab-d78cf9df035e" class="">
+</p></div></div><figure id="11fcec1b-e1a9-4e8c-a71b-acdbcee3f51a"><div class="source"><a href="https://embed.notionlytics.com/wt/ZXlKd1lXZGxTV1FpT2lKbE1qUTFaRGhsTXpZM09HSTBZV1kyWWpZMU5XWXhaVFprT1dRd01UZG1OaUlzSW5kdmNtdHpjR0ZqWlZSeVlXTnJaWEpKWkNJNkltUnJiMHRCY21OTllqbG5VSE53WkZkc1lrRnpJbjA9">https://embed.notionlytics.com/wt/ZXlKd1lXZGxTV1FpT2lKbE1qUTFaRGhsTXpZM09HSTBZV1kyWWpZMU5XWXhaVFprT1dRd01UZG1OaUlzSW5kdmNtdHpjR0ZqWlZSeVlXTnJaWEpKWkNJNkltUnJiMHRCY21OTllqbG5VSE53WkZkc1lrRnpJbjA9</a></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
